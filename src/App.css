@@ -1,0 +1,129 @@
+/* Main container */
+.main {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height for centering */
+  background-color: #f4f4f9; /* Subtle background for contrast */
+}
+
+/* Card container */
+.card {
+  
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  min-height: 60vh; /* Slightly taller for a balanced layout */
+  width: 320px; /* A little wider for better proportions */
+  padding: 20px; /* Add padding for content spacing */
+  border-radius: 15px; /* Softer corners */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a modern look */
+  background-color: #fffaf0; /* Light, warm background color */
+  font-family: 'Arial', sans-serif;
+  text-align: center; /* Center-align text inside */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  overflow-y: scroll;
+}
+
+
+
+/* Label styling */
+.labels {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1d62a7;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 15px;
+}
+
+/* Input field styling */
+input {
+  width: 60%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input field focus effect */
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+/* Button (optional) styling */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.mainMeal{
+  border: none;
+  display: flex;
+  /* flex-direction: column; */
+  
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height for centering */
+  background-color: #f4f4f9; /* Subtle background for contrast */
+}
+.cardMeal{
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  min-height: 60vh; /* Slightly taller for a balanced layout */
+  width: 320px; /* A little wider for better proportions */
+  padding: 20px; /* Add padding for content spacing */
+  border-radius: 15px; /* Softer corners */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a modern look */
+  background-color: #fffaf0; /* Light, warm background color */
+  font-family: 'Arial', sans-serif;
+  text-align: center; /* Center-align text inside */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  overflow-y: scroll;
+}
+#taxAmount{
+  color: red;
+  
+}
+.mealLabel{
+  margin: 6px;
+}
+#options{
+  padding: 50px;
+  width: 30vw;
+  /* background-color: #007bff; */
+}
+select{
+  padding: 10px;
+  min-height: 90px;
+}
+option{
+  /* background-color: red; */
+  width: 30vw;
+  margin: 0;
+  padding: 10px;
+  min-height: 10px;
+}
