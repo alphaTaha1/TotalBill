@@ -8,8 +8,11 @@
   "build": "vite build",
   "lint": "eslint .",
   "preview": "vite preview",
-  "deploy": "npm run build && xcopy /E /Y /I dist\\* . && git add . && git commit -m 'Deploy to master' && git push origin master"
+  "predeploy": "npm run build",
+
+  "deploy": "gh-pages -d dist"
 }
+
 ,
 
   "dependencies": {

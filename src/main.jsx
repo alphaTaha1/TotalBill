@@ -20,7 +20,7 @@ const [name , setName] = useState([])
           <totalAmountcontext.Provider value = {{totalAmount , setTotalAmount}}>
           <totalTaxAmountcontext.Provider value = {{totalTaxAmount , setTotalTaxAmount}}>
           <nameContext.Provider value = {{name, setName}}>
-          <BrowserRouter>
+          <BrowserRouter basename='/TotalBill'>
                 <StrictMode>
                     <Routes>
                         <Route path="/" element={<App />} />
