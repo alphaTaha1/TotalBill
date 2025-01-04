@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { numberContext, totalAmountcontext , totalTaxAmountcontext, nameContext} from './context';
 import Entries from './Entries.jsx';
 import BillHandler from './BillHandler.jsx'
-
+import Header from './Header.jsx';
 function Main() {
     const [number, setNumber] = useState(1);
 const [totalAmount, setTotalAmount] = useState(0)
@@ -22,6 +22,7 @@ const [name , setName] = useState([])
           <nameContext.Provider value = {{name, setName}}>
           <BrowserRouter basename='/TotalBill'>
                 <StrictMode>
+                    <Header/>
                     <Routes>
                         <Route path="/" element={<App />} />
                         <Route path="/InfoHandler" element={<InfoHandler />} />

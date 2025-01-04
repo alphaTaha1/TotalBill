@@ -1,5 +1,6 @@
 /* Main container */
 .main {
+  margin: 0;
   border: none;
   display: flex;
   flex-direction: column;
@@ -8,7 +9,21 @@
   height: 100vh; /* Full viewport height for centering */
   background-color: #f4f4f9; /* Subtle background for contrast */
 }
+#websiteHeader{
+  background-color: rgb(222, 192, 192);
+  margin: 0;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  display : flex;
+  justify-content: center;
+  text-align: center;
+  h1{
+    color: white;
 
+  }
+}
 /* Card container */
 .card {
   
@@ -82,11 +97,17 @@ button:hover {
   border: none;
   display: flex;
   /* flex-direction: column; */
-  
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: auto;
+  border-radius: 15px;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height for centering */
-  background-color: #f4f4f9; /* Subtle background for contrast */
+  min-height: 60vh;
+  min-width: 320px ; /* Full viewport height for centering */
+  background-color: #2727a6; /* Subtle background for contrast */
 }
 .cardMeal{
   display: flex;
@@ -94,7 +115,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
   min-height: 60vh; /* Slightly taller for a balanced layout */
-  width: 320px; /* A little wider for better proportions */
+  min-width: 320px; /* A little wider for better proportions */
   padding: 20px; /* Add padding for content spacing */
   border-radius: 15px; /* Softer corners */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a modern look */
