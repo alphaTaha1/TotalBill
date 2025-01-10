@@ -216,3 +216,13 @@ select{
   position: absolute;
   top: 20%;
 }
+@media (max-width: 768px) {
+  #options{
+    padding: 5px;
+    min-width: 40vw;
+    border-radius: 8px;
+    margin: 0px;
+    /* background-color: #007bff; */
+  }
+}
+
