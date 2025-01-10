@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import {  numberContext, nameContext } from "./context";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
+import cardPhoto from "./cardPhoto.jpeg"
 
 import { motion } from 'framer-motion';
 
@@ -32,7 +33,13 @@ const navigate = useNavigate()
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}> 
-<div className="card">
+<div className="card"
+     style={{
+            backgroundImage: `url(${cardPhoto})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+>
                 <label id="entriesHeading" htmlFor="Entries">Enter the names of {number} people</label>
                 {Array.from({ length: number }).map((_, index) => (
                     <div id="entriesCard" key={index}>

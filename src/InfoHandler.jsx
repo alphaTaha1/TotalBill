@@ -3,6 +3,8 @@ import { numberContext , totalAmountcontext , nameContext} from './context'
 import {useNavigate } from 'react-router-dom'
 import { Button } from 'antd'
 import { motion } from 'framer-motion'
+import cardPhoto from "./cardPhoto.jpeg"
+
 function InfoHandler() {
   const{name} = useContext(nameContext)
   console.log(name)
@@ -29,7 +31,13 @@ const handleSubmit  = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}> 
           <div className="main">
-    <div className='card'>
+    <div className='card'
+         style={{
+                backgroundImage: `url(${cardPhoto})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+    >
     <h1></h1>
     <label htmlFor="totalAmount"> Enter the total amount (wihout tax)</label>
 <input type="number" id='totalAmount' name='totalAmount' value={totalAmount} onChange={handleChange}/>

@@ -4,6 +4,8 @@ import { nameContext } from './context';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
 import { motion } from 'framer-motion';
+import cardPhoto from "./cardPhoto.jpeg"
+
 function MealAmountHandler() {
     const { name } = useContext(nameContext);
     const [totalForPeople, setTotalForPeople] = useState({});
@@ -90,8 +92,20 @@ function MealAmountHandler() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}> 
-       <div className="mainMeal">
-            <div className="cardMeal">
+       <div className="mainMeal"
+            style={{
+                   backgroundImage: `url(${cardPhoto})`,
+                   backgroundSize: 'cover',
+                   backgroundPosition: 'center',
+                 }}
+       >
+            <div className="cardMeal"
+                 style={{
+                        backgroundImage: `url(${cardPhoto})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+            >
                 <h1 className='headings'>Meal details</h1>
                 <label className="labels" htmlFor="mealPriceAmount">
                     Enter the price of the meal

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button, List } from 'antd';
 import { nameContext } from './context';
 import { motion } from 'framer-motion';
+import cardPhoto from "./cardPhoto.jpeg"
 function BillHandler() {
     const { person } = useContext(nameContext);
     const location = useLocation();
@@ -18,8 +19,13 @@ function BillHandler() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
     >
-    <div  className='card'>
+    <div  className='card'       style={{
+            backgroundImage: `url(${cardPhoto})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}>
                 <h1>Bill Details</h1>
+                
                 {updatedTotal && Object.keys(updatedTotal).length > 0 ? (
                     <List style={{backgroundColor:"lightblue" , fontWeight:'bold'}}
                         bordered
