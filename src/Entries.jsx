@@ -1,6 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import {  numberContext, nameContext } from "./context";
 import { useNavigate } from "react-router-dom";
+import { Button } from "antd";
+
+import { motion } from 'framer-motion';
+
 function Entries() {
     const {name, setName} = useContext(nameContext)
     const { number } = useContext(numberContext);  
@@ -23,11 +27,15 @@ const navigate = useNavigate()
     };
 
     return (
-        <div className="main">
-            <div className="card">
-                <label htmlFor="Entries">Enter the names of {number} people</label>
+        <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.5 }}> 
+<div className="card">
+                <label id="entriesHeading" htmlFor="Entries">Enter the names of {number} people</label>
                 {Array.from({ length: number }).map((_, index) => (
-                    <div key={index}>
+                    <div id="entriesCard" key={index}>
                         <input
                             type="text"
                             id={`entry-${index}`}
@@ -37,9 +45,11 @@ const navigate = useNavigate()
                             onChange={(event) => handleNameChange(index, event)}  // Handle input change
                         />
                     </div>
-                ))}   <button onClick={handleSubmit}>Submit</button>
+                ))}   <Button onClick={handleSubmit}>Submit</Button>
             </div>
-        </div>
+
+        </motion.div>
+            
     );
 }
 

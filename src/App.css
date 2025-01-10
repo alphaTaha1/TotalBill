@@ -11,6 +11,7 @@
 }
 #websiteHeader{
   background-color: rgb(222, 192, 192);
+  background-image: url("./assets/headerPhoto.jpeg");
   margin: 0;
   position: absolute;
   top: 0%;
@@ -26,21 +27,31 @@
 }
 /* Card container */
 .card {
-  
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-  min-height: 60vh; /* Slightly taller for a balanced layout */
-  width: 320px; /* A little wider for better proportions */
-  padding: 20px; /* Add padding for content spacing */
-  border-radius: 15px; /* Softer corners */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a modern look */
-  background-color: #fffaf0; /* Light, warm background color */
-  font-family: 'Arial', sans-serif;
-  text-align: center; /* Center-align text inside */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
-  overflow-y: scroll;
+  background-image: url("./assets/cardPhoto.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: 800;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    min-height: 60vh; /* Slightly taller for a balanced layout */
+    max-height: 73vh;
+    min-width: 300px; /* A little wider for better proportions */
+    padding: 10px;
+    border-radius: 15px; /* Softer corners */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a modern look */
+    background-color: #fffaf0; /* Light, warm background color */
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Center-align text inside */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    /* overflow-y: scroll; */
 }
 
 
@@ -48,17 +59,17 @@ justify-content: center;
 /* Label styling */
 .labels {
   display: block;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #1d62a7;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #eaedef;
   font-family: 'Arial', sans-serif;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 /* Input field styling */
 input {
   width: 60%;
-  padding: 10px 15px;
+  padding: 4px 4%;
   font-size: 1rem;
   color: #333;
   background-color: #f9f9f9;
@@ -94,11 +105,15 @@ button:hover {
   background-color: #0056b3;
 }
 .mainMeal{
+  background-image: url("./assets/cardPhoto.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: none;
   display: flex;
   /* flex-direction: column; */
   position: absolute;
-  top: 55%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: auto;
@@ -106,45 +121,98 @@ button:hover {
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  min-width: 320px ; /* Full viewport height for centering */
-  background-color: #2727a6; /* Subtle background for contrast */
+  max-height: 73vh;
+  min-width: 300px ; /* Full viewport height for centering */
+  background-color: #87879e; /* Subtle background for contrast */
 }
 .cardMeal{
+  background-image: url("./assets/cardPhoto.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
   display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
   min-height: 60vh; /* Slightly taller for a balanced layout */
-  min-width: 320px; /* A little wider for better proportions */
-  padding: 20px; /* Add padding for content spacing */
+  max-height: 73vh;
+  min-width: 300px; /* A little wider for better proportions */
+  padding: 10px;
   border-radius: 15px; /* Softer corners */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for a modern look */
   background-color: #fffaf0; /* Light, warm background color */
   font-family: 'Arial', sans-serif;
   text-align: center; /* Center-align text inside */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 #taxAmount{
   color: red;
+
+}
+#mealPriceAmount{
+  background-color: #fff;
+  border-radius: 1px;
+  margin-bottom: 6px;
+}
+#mealTaxAmount{
+  background-color: #fff;
+  border-radius: 1px;
+margin-bottom: 2px;
+}
+.buttonsInMealAmountHandler
+{
   
+  display: flex;
+  gap: 1vw;
+  margin: 0px 5px 0px;
 }
 .mealLabel{
   margin: 6px;
 }
 #options{
-  padding: 50px;
-  width: 30vw;
+  padding: 5px;
+  min-width: 50vw;
+  border-radius: 8px;
+  margin: 0px;
   /* background-color: #007bff; */
 }
 select{
   padding: 10px;
   min-height: 90px;
 }
-option{
-  /* background-color: red; */
+/* option{
   width: 30vw;
   margin: 0;
-  padding: 10px;
-  min-height: 10px;
+  padding: 0px;
+  min-height: 5px;
+} */
+.headings{
+  margin-top: 0px;
+}
+#number{
+  margin: 50px 10px 2px;
+}
+@media (min-width: 1024px) {
+  #options {
+    padding: 5px;
+    min-width: 20vw;
+    border-radius: 2px;
+    margin: 0px;
+    /* background-color: black; */
+  }
+}
+#entriesCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 0px;
+
+  /* background-color: beige; */
+}
+#entriesHeading{
+  position: absolute;
+  top: 20%;
 }

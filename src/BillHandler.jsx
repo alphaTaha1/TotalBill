@@ -1,29 +1,43 @@
-import React, { useContext } from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { Button, List } from 'antd';
 import { nameContext } from './context';
+import { motion } from 'framer-motion';
 function BillHandler() {
-    const {person} = useContext(nameContext)
+    const { person } = useContext(nameContext);
     const location = useLocation();
-    const [total, ssetTotal] = useState("");
-    const { updatedTotal } = location.state  
+    const [total, setTotal] = useState("");
+    const { updatedTotal } = location.state;
 
     return (
-        <div className='main'>
-            <div className='card'>
-            <h1>Bill Details</h1>
-            
-            {updatedTotal && Object.keys(updatedTotal).length > 0 ? (
-                        Object.keys(updatedTotal).map((person) => (
-                            <div key={person}>
-                                <p>{person}: ${updatedTotal[person].toFixed(2)}</p>
-                            </div>
-                        ))
-                    ) : (
-                        <p>No data available</p>
-                    )}
-        </div>
+    <>
+    <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+    >
+    <div  className='card'>
+                <h1>Bill Details</h1>
+                {updatedTotal && Object.keys(updatedTotal).length > 0 ? (
+                    <List style={{backgroundColor:"lightblue" , fontWeight:'bold'}}
+                        bordered
+                        dataSource={Object.entries(updatedTotal)}
+                        renderItem={([person, amount]) => (
+                            <List.Item>
+                                <p>{person}: ${amount.toFixed(2)}</p>
+                            </List.Item>
+                        )}
+                    />
+                ) : (
+                    <p>No data available</p>
+                )}
             </div>
+
+    </motion.div>
+    </>
+           
       
     );
 }

@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { nameContext } from './context';
 import { useNavigate } from 'react-router-dom';
-
+import { Button } from 'antd';
+import { motion } from 'framer-motion';
 function MealAmountHandler() {
     const { name } = useContext(nameContext);
     const [totalForPeople, setTotalForPeople] = useState({});
@@ -83,9 +84,15 @@ function MealAmountHandler() {
       navigate("/BillHandler", { state: { meal, updatedTotal: totalForPeople } });    };
 
     return (
-        <div className="mainMeal">
+        <>
+            <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}> 
+       <div className="mainMeal">
             <div className="cardMeal">
-                <h1>Meal details</h1>
+                <h1 className='headings'>Meal details</h1>
                 <label className="labels" htmlFor="mealPriceAmount">
                     Enter the price of the meal
                 </label>
@@ -107,7 +114,7 @@ function MealAmountHandler() {
                     min={0}
                     max={currentMeal.mealPrice}
                 />
-                <label className="labels" htmlFor="options"></label>
+                {/* <label className="labels" htmlFor="options"></label> */}
                 <select name="options" id="options" multiple onChange={handleNameSelect}>
                     {name.map((Name, index) => (
                         <option key={index} value={Name}>
@@ -115,10 +122,16 @@ function MealAmountHandler() {
                         </option>
                     ))}
                 </select>
-                <button onClick={submitMeal}>Submit</button>
-                <button onClick={finish}>FINISH</button>
+                <div className='buttonsInMealAmountHandler'>
+                <Button onClick={submitMeal}>Submit the Meal</Button>
+                <Button type='primary' onClick={finish}>FINISH</Button>
+                </div>
+      
             </div>
         </div>
+    </motion.div>
+        </>
+       
     );
 }
 
